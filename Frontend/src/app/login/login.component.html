@@ -1,0 +1,26 @@
+<div class="sign">
+  
+	<form #form="ngForm" class="signup" (ngSubmit)="form.valid&&loginuser()" autocomplete="off">
+	  
+		<h1>Welcome</h1>
+	  
+	
+	  <div class="signup__field">
+		<input class="signup__input" type="text" name="username" id="username" required #username="ngModel" name="username" [(ngModel)]="user.username" />
+		<label class="signup__label" for="username">Username</label>
+		<small class="text-danger" *ngIf="form.submitted&&username.errors?.['required']">Require Username</small>
+	  </div>
+	
+	  
+	
+	  <div class="signup__field">
+		<input class="signup__input" type="password" name="password" id="password" required #username="ngModel" name="password" [(ngModel)]="user.password" />
+		<label class="signup__label" for="password">Password</label>
+		<small class="text-danger" *ngIf="form.submitted&&username.errors?.['required']">Require Password</small>
+	  </div>
+	
+	  <button>Log In</button>
+	</form>
+	
+	
+	</div>

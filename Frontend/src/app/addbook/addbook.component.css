@@ -1,0 +1,26 @@
+.addbook{
+    width: 80%;
+    padding: 40px;
+}
+
+.add{
+    display: flex;
+    justify-content: center;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+    
+}
+@media only screen and (min-width: 600px) {
+   .addbook {
+      background-color: lightblue;
+      width: 50%;
+      padding: 80px;
+      padding-top: 50px;
+    }
+  }
+
+  .background{
+    background-image: url('https://nypost.com/wp-content/uploads/sites/2/2019/03/old-library-book.jpg?quality=75&strip=all');
+     background-repeat: no-repeat;
+     background-size: 100% 100%;
+  }

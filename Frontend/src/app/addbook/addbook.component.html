@@ -1,0 +1,41 @@
+<div class="background">
+  
+<div class="add">
+  <div class="addbook">
+      <h2 class="mb-5 text-center">Add Book</h2>
+      <form #form="ngForm" (ngSubmit)="form.valid&&addbook()">
+          
+          <div class="mb-3">
+            <label class="form-label">Sl No.</label>
+            <input class="form-control" required #slno="ngModel" name="slno" [(ngModel)]="books.slno">
+            <small class="text-danger" *ngIf="form.submitted&&slno.errors?.['required']">Field cannot be empty</small>
+          </div>
+          <div class="mb-3">
+              <label class="form-label">Book Name</label>
+              <input class="form-control" required #bookname="ngModel" name="bookname" [(ngModel)]="books.bookname">
+              <small class="text-danger" *ngIf="form.submitted&&bookname.errors?.['required']">Field cannot be empty</small>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Author</label>
+              <input class="form-control" required #author="ngModel" name="author" [(ngModel)]="books.author">
+              <small class="text-danger" *ngIf="form.submitted&&author.errors?.['required']">Field cannot be empty</small>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Edition</label>
+              <input class="form-control" required #edition="ngModel" name="edition" [(ngModel)]="books.edition">
+              <small class="text-danger" *ngIf="form.submitted&&edition.errors?.['required']">Field cannot be empty</small>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Image</label>
+              <input class="form-control" required #image="ngModel" name="imageurl" [(ngModel)]="books.imageurl">
+              <small class="text-danger" *ngIf="form.submitted&&image.errors?.['required']">Field cannot be empty</small>
+            </div>
+          
+          <div class="text-center mt-5">
+          <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+        </form>
+  </div>
+</div>
+
+</div>

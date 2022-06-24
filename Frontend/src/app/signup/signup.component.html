@@ -1,0 +1,33 @@
+
+
+<div class="sign">
+
+<form #form="ngForm" class="signup" (ngSubmit)="form.valid&&signup()" autocomplete="off">
+  <h1>Create account</h1>
+  <h2>Already have an account? <a routerLink="/login">Log In</a></h2>
+
+  <div class="signup__field">
+    <input class="signup__input" type="text" name="username" id="username" required #username="ngModel" name="username" [(ngModel)]="user.username"/>
+    <label class="signup__label" for="username">Username</label>
+    <small class="text-danger" *ngIf="form.submitted&&username.errors?.['required']">Require Username</small>
+  </div>
+
+  <div class="signup__field">
+    <input class="signup__input" type="text" name="email" id="email" required #Email="ngModel" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" name="email" [(ngModel)]="user.email" />
+    <label class="signup__label" for="email">Email</label>
+    <small class="text-danger" *ngIf="form.submitted&&Email.errors?.['required']">Require Email</small>
+    <small class="text-danger" *ngIf="form.submitted&&Email.errors?.['pattern']">Email not Valid</small>
+  </div>
+
+  <div class="signup__field">
+    <input class="signup__input" type="password" name="password" id="password" required #Password="ngModel" name="password" [(ngModel)]="user.password" />
+    <label class="signup__label" for="password">Password</label>
+    <small class="text-danger" *ngIf="form.submitted&&Password.errors?.['required']">Require Password</small>
+  </div>
+
+  <button>Sign up</button>
+</form>
+
+
+</div>
+ 

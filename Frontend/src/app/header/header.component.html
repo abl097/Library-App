@@ -1,0 +1,32 @@
+
+  <nav class="navbar navbar-expand-lg sticky-top navbar-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand mx-4" routerLink="">Library App</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item" *ngIf="user.logedin()">
+            <a class="nav-link active" routerLink="">Home</a>
+          </li>
+          <li class="nav-item" *ngIf="user.logedin()">
+            <a class="nav-link active" routerLink="books">Books</a>
+          </li>
+          <li class="nav-item" *ngIf="user.logedin()">
+            <a class="nav-link active" routerLink="addbook">Add Books</a>
+          </li>  
+        </ul>
+
+        <form class="d-flex">
+      
+          
+            <button class="btn register  me-3" *ngIf="!user.logedin()"  routerLink="signup">Sign Up</button>
+            <button class="btn login  me-3"  *ngIf="!user.logedin()" routerLink="login">Log In</button>
+            <button class="btn login  me-4"  *ngIf="user.logedin()" (click)="logout()">Log Out</button>
+            
+        
+        </form>
+      </div>
+    </div>
+  </nav>

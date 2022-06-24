@@ -1,0 +1,30 @@
+<div class="bookbody">
+    <div>
+        <table class="table table table-success table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Sl No.</th>
+                <th scope="col">Book Name</th>
+                <th scope="col">Author</th>
+                <th scope="col">Edition</th>
+                <th scope="col">Image</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let book of books">
+                <td scope="row">{{book.slno}}</td>
+                <td>{{book.bookname}}</td>
+                <td>{{book.author}}</td>
+                <td>{{book.edition}}</td>
+                <td><img src="{{book.imageurl}}" style="width: 60px;" alt=""></td>
+                <td><div>
+                    <i (click)="updatedata(book)" class="fa-solid fa-pen-to-square fa-lg"></i>
+                    &#160;
+                    <i (click)="deletedata(book)" class="fa-solid fa-trash fa-lg"></i>
+                </div></td>
+              </tr>            
+            </tbody>
+          </table>
+    </div>
+</div>
